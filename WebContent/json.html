@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	window.onload= function(){
+		
+		var btnLoad = document.getElementById('btnLoad');
+
+		btnLoad.onclick = function(){
+			console.log("click")
+			fetch("http://localhost:8080/HelloWorld/json")
+				.then(function(response){
+					return response.json()
+				})
+				.then(function(data){
+					for(var user of data){
+						para.innerHTML+=user.name+"<br/>"
+						console.log(user.name)
+					}
+				})
+		}
+		
+	}
+	
+</script>
+
+</head>
+<body>
+
+	<button id="btnLoad">load</button>
+	<p id="para"></p>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Insert title here</title>
+</head>
+<body>
+
+<f:view>
+	<h:form>
+		Calculator
+		<h:outputText value="a :"/>
+		<h:inputText value="#{calculatorBean.a}"/>
+		<h:outputText value="b :"/>
+		<h:inputText value="#{calculatorBean.b}"/>
+		<h:outputText value="#{calculatorBean.result}"/>
+		<h:commandButton actionListener="#{calculatorBean.add}"  value="add">
+			<f:ajax execute= "@all" render="resultId" />
+		</h:commandButton>
+		
+		<h4><h:outputText id="resultId" value="#{calculatorBean.result}" /></h4>
+	</h:form>
+	
+	
+</f:view>
+
+
+
+</body>
+</html>
